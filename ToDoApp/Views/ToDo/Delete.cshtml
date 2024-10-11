@@ -1,0 +1,10 @@
+﻿@model ToDoApp.Models.ToDoItem
+
+<h2>Delete To-Do</h2>
+<p>Are you sure you want to delete this item?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/ToDo/Index" class="btn btn-secondary">Cancel</a>
+</form>

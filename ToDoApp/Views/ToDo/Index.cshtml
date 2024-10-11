@@ -1,0 +1,25 @@
+﻿@model List<ToDoApp.Models.ToDoItem>
+
+<h2>To-Do List</h2>
+<a href="/ToDo/Create">Create New To-Do</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Completed</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@(item.IsCompleted ? "Yes" : "No")</td>
+                <td><a href="/ToDo/Edit/@item.Id">Edit</a></td>
+                <td><a href="/ToDo/Delete/@item.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
